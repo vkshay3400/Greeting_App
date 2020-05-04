@@ -2,10 +2,12 @@ package com.bridgelabz.greetingappapi.controller;
 
 import com.bridgelabz.greetingappapi.dto.GreetingDto;
 import com.bridgelabz.greetingappapi.dto.UserDto;
+import com.bridgelabz.greetingappapi.model.User;
 import com.bridgelabz.greetingappapi.service.GreetingServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
@@ -51,5 +53,10 @@ public class GreetingController {
     @GetMapping("/getId/{id}")
     public Object getGreetingByUserId(@PathVariable(value = "id") Long id) {
         return service.getUserById(id);
+    }
+
+    @GetMapping("/list")
+    public List<User> getUserData() {
+        return service.getUserList();
     }
 }
