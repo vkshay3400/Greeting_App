@@ -24,4 +24,9 @@ public class GreetingServiceImpl implements IGreetingService {
         userRepository.save(user);
         return userDto;
     }
+
+    @Override
+    public Object getUserById(Long id) {
+        return userRepository.findById(id);
+    }
 }
