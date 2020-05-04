@@ -36,4 +36,17 @@ public class GreetingServiceImpl implements IGreetingService {
     public List<User> getUserList() {
         return userRepository.findAll();
     }
+
+    @Override
+    public User getUserUpdate(Long id) {
+        User user = userRepository.findById(id).get();
+        user.setGreeting("Updated");
+        return userRepository.save(user);
+    }
+
+    @Override
+    public List<User> getDeleteUser(Long id) {
+        userRepository.deleteById(id);
+        return userRepository.findAll();
+    }
 }
