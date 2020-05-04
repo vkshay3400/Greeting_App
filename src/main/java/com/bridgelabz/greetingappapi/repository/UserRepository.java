@@ -1,7 +1,9 @@
-package com.bridgelabz.greetingapp.repository;
+package com.bridgelabz.greetingappapi.repository;
 
-import com.bridgelabz.greetingappapi.dto.Userdto;
+import com.bridgelabz.greetingappapi.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface UserRepository extends JpaRepository<Userdto, Long> {
+@Repository
+public interface UserRepository extends JpaRepository<User, Long> {
 }

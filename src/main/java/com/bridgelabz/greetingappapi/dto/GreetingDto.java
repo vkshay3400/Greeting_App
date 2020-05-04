@@ -1,10 +1,10 @@
 package com.bridgelabz.greetingappapi.dto;
 
-public class Greeting {
-    private final long incrementAndGet;
-    private final String format;
+public class GreetingDto {
+    private long incrementAndGet;
+    private String format;
 
-    public Greeting(long incrementAndGet, String format) {
+    public GreetingDto(long incrementAndGet, String format) {
         this.incrementAndGet = incrementAndGet;
         this.format = format;
     }
