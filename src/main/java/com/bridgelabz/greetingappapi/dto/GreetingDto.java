@@ -1,4 +1,4 @@
-package com.bridgelabz.greetingapp.model;
+package com.bridgelabz.greetingappapi.dto;
 
 public class Greeting {
     private final long incrementAndGet;

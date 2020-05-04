@@ -1,6 +1,6 @@
-package com.bridgelabz.greetingapp.model;
+package com.bridgelabz.greetingappapi.dto;
 
-public class User {
+public class Userdto {
     private String firstName;
     private String lastName;
 

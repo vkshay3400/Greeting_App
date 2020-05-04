@@ -1,7 +1,7 @@
 package com.bridgelabz.greetingapp.controller;
 
-import com.bridgelabz.greetingapp.model.Greeting;
-import com.bridgelabz.greetingapp.model.User;
+import com.bridgelabz.greetingapp.dto.Greeting;
+import com.bridgelabz.greetingapp.dto.Userdto;
 import com.bridgelabz.greetingapp.service.IGreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -33,8 +33,8 @@ public class GreetingController {
     }
 
     @PostMapping("/post")
-    public Greeting greetingPost(@RequestBody User user) {
-        return new Greeting(counter.incrementAndGet(), String.format(template, user.getFirstName() + " " + user.getLastName()));
+    public Greeting greetingPost(@RequestBody Userdto userdto) {
+        return new Greeting(counter.incrementAndGet(), String.format(template, userdto.getFirstName() + " " + userdto.getLastName()));
     }
 
     @PutMapping("/put/{firstName}")
