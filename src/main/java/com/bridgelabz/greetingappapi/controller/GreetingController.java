@@ -36,18 +36,8 @@ public class GreetingController {
     }
 
     @PostMapping("/post")
-    public GreetingDto greetingPost(@RequestBody UserDto userdto) {
-        return new GreetingDto(counter.incrementAndGet(), String.format(template, userdto.getFirstName() + " " + userdto.getLastName()));
-    }
-
-    @PutMapping("/put/{firstName}")
-    public GreetingDto greetingPut(@PathVariable String firstName, @RequestParam(value = "lastName") String lastName) {
-        return new GreetingDto(counter.incrementAndGet(), String.format(template, firstName + " " + lastName));
-    }
-
-    @PostMapping("/message")
-    public UserDto getMessage(@RequestBody UserDto userDto){
-        return service.getGreeting(userDto);
+    public UserDto greetingPost(@RequestBody UserDto userdto) {
+        return service.getGreeting(userdto);
     }
 
     @GetMapping("/getId/{id}")
@@ -66,7 +56,7 @@ public class GreetingController {
     }
 
     @DeleteMapping("/deleteId/{id}")
-    public List<User> deleteUser(@PathVariable(value = "id") Long id) {
+    public List<User> getDeleteUser(@PathVariable(value = "id") Long id) {
         return service.getDeleteUser(id);
     }
 }
