@@ -3,7 +3,7 @@ package com.bridgelabz.greetingappapi.controller;
 import com.bridgelabz.greetingappapi.dto.GreetingDto;
 import com.bridgelabz.greetingappapi.dto.UserDto;
 import com.bridgelabz.greetingappapi.model.User;
-import com.bridgelabz.greetingappapi.service.GreetingServiceImpl;
+import com.bridgelabz.greetingappapi.service.IGreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +18,7 @@ public class GreetingController {
     private final AtomicLong counter = new AtomicLong();
 
     @Autowired
-    GreetingServiceImpl service;
+    IGreetingService service;
 
     @GetMapping("/greetings")
     public GreetingDto greeting(@RequestParam(value = "name", defaultValue = "world") String name) {
